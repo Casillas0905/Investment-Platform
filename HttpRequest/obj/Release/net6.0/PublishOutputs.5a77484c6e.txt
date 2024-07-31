@@ -1,0 +1,4 @@
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\HttpRequest.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\HttpRequest.deps.json
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\HttpRequest.pdb
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Newtonsoft.Json.dll

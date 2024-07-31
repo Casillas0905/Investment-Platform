@@ -1,26 +1,37 @@
-﻿# Use the official .NET SDK image to build the application
-# This image contains the .NET SDK and is used for compiling your application
+﻿# Use the .NET 6 SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project file and restore dependencies
-COPY *.csproj ./
+# Copy the solution and project files into the container
+COPY *.sln ./
+COPY HttpRequest/HttpRequest.csproj HttpRequest/
+COPY Test-methods/Test-methods.csproj Test-methods/
+
+# Restore the dependencies for both projects
 RUN dotnet restore
 
-# Copy the rest of the application code and build it
-COPY . ./
-RUN dotnet publish -c Release -o out
+# Copy the rest of the application code
+COPY . .
 
-# Use the official .NET Runtime image to run the application
-# This image contains only the .NET Runtime and is used for running your application
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# Build the solution
+RUN dotnet build -c Release -o /app/build
+
+# Publish the application
+RUN dotnet publish -c Release -o /app/publish
+
+# Use the .NET 6 ASP.NET runtime image for the final image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+
+# Set the working directory inside the runtime container
 WORKDIR /app
 
-# Copy the compiled application from the build stage
-COPY --from=build /app/out ./
+# Copy the published output from the build stage
+COPY --from=build /app/publish .
 
-# Set the entry point to your application
-ENTRYPOINT ["dotnet", "investment-platform.dll"]
+# Define the entry point for the application
+ENTRYPOINT ["dotnet", "HttpRequest.dll"]
 
-# Expose the port the app runs on (optional, depending on your application)
+# Expose port if needed (e.g., for web applications)
 EXPOSE 80

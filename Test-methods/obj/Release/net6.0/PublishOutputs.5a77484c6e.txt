@@ -1,0 +1,8 @@
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Test-methods.exe
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Test-methods.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Test-methods.deps.json
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Test-methods.runtimeconfig.json
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Test-methods.pdb
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\Newtonsoft.Json.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\HttpRequest.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\publish\HttpRequest.pdb

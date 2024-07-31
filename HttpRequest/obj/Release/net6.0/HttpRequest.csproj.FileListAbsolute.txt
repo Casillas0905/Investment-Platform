@@ -1,0 +1,12 @@
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Release\net6.0\HttpRequest.deps.json
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Release\net6.0\HttpRequest.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Release\net6.0\HttpRequest.pdb
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.csproj.AssemblyReference.cache
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.AssemblyInfoInputs.cache
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.AssemblyInfo.cs
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.csproj.CoreCompileInputs.cache
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\refint\HttpRequest.dll
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\HttpRequest.pdb
+C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\obj\Release\net6.0\ref\HttpRequest.dll

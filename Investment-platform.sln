@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpRequest", "HttpRequest\HttpRequest.csproj", "{9A39BB97-33E0-4FF3-8149-987DB50F1BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test-methods", "Test-methods\Test-methods.csproj", "{50622BAA-45CD-454E-8DD0-6EDD24F829B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,6 +14,10 @@ Global
 		{9A39BB97-33E0-4FF3-8149-987DB50F1BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A39BB97-33E0-4FF3-8149-987DB50F1BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A39BB97-33E0-4FF3-8149-987DB50F1BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50622BAA-45CD-454E-8DD0-6EDD24F829B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50622BAA-45CD-454E-8DD0-6EDD24F829B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50622BAA-45CD-454E-8DD0-6EDD24F829B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50622BAA-45CD-454E-8DD0-6EDD24F829B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
