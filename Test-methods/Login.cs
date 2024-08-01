@@ -16,9 +16,8 @@ public class Login
         {
             // Authenticate
             var loginData = new { login = username, password, remember_me = true };
-            Console.WriteLine("login data initialized");
             var loginResponse = await client.PostAsJsonAsync("https://api.cert.tastyworks.com/sessions", loginData);
-            Console.WriteLine("login response good");
+
             if (!loginResponse.IsSuccessStatusCode)
             {
                 var errorMessage = await loginResponse.Content.ReadAsStringAsync();
@@ -27,10 +26,19 @@ public class Login
 
             // Extract session token
             var loginContent = await loginResponse.Content.ReadAsStringAsync();
-            var sessionToken = JObject.Parse(loginContent)["token"].ToString();
-            Console.WriteLine("Token:"+ sessionToken);
+            JObject parsedResponse = JObject.Parse(loginContent);
+
+            // Check if the necessary properties exist
+            if (parsedResponse["data"]?["session-token"] == null)
+            {
+                throw new Exception("Session token not found in the response.");
+            }
+
+            var sessionToken = parsedResponse["data"]["session-token"].ToString();
+            Console.WriteLine($"Token: {sessionToken}");
             return sessionToken;
         }
+
         catch (Exception ex)
         {
             // Log or handle the exception as needed
@@ -41,15 +49,19 @@ public class Login
 
     public async Task<string> GetDetails(string sessionToken, string accountNumber)
     {
-        // Set Authorization header
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessionToken);
+        // Set Authorization header directly with the session token
+        client.DefaultRequestHeaders.Clear();
+        client.DefaultRequestHeaders.Add("Authorization", sessionToken);
+
         // Retrieve account details
-        var accountsResponse = await client.GetAsync("https://api.cert.tastyworks.com/customers/me/accounts");
+        var accountsResponse = await client.GetAsync("https://api.cert.tastyworks.com/customers/me/accounts/5WW13841");
+
         if (!accountsResponse.IsSuccessStatusCode)
         {
             var errorMessage = await accountsResponse.Content.ReadAsStringAsync();
             throw new Exception($"Failed to retrieve account details: {errorMessage}");
         }
+
         var accountDetails = await accountsResponse.Content.ReadAsStringAsync();
         return accountDetails;
     }

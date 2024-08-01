@@ -14,19 +14,6 @@
             "related": ".xml"
           }
         }
-      },
-      "HttpRequest/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "bin/placeholder/HttpRequest.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HttpRequest.dll": {}
-        }
       }
     }
   },
@@ -60,16 +47,11 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
-    },
-    "HttpRequest/1.0.0": {
-      "type": "project",
-      "path": "../HttpRequest/HttpRequest.csproj",
-      "msbuildProject": "../HttpRequest/HttpRequest.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "HttpRequest >= 1.0.0"
+      "Newtonsoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
@@ -96,11 +78,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform\\HttpRequest\\HttpRequest.csproj": {
-              "projectPath": "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform\\HttpRequest\\HttpRequest.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -112,6 +90,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

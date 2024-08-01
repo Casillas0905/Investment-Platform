@@ -4,8 +4,6 @@ C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\Test-methods.dll
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\Test-methods.pdb
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\HttpRequest.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\HttpRequest.pdb
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\obj\Debug\net6.0\Test-methods.csproj.AssemblyReference.cache
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\obj\Debug\net6.0\Test-methods.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\obj\Debug\net6.0\Test-methods.AssemblyInfoInputs.cache

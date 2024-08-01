@@ -1,4 +1,0 @@
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Debug\net6.0\publish\HttpRequest.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Debug\net6.0\publish\HttpRequest.deps.json
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Debug\net6.0\publish\HttpRequest.pdb
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\HttpRequest\bin\Debug\net6.0\publish\Newtonsoft.Json.dll

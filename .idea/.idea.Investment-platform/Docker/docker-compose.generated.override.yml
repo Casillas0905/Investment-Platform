@@ -1,0 +1,24 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  backend:
+    build:
+      context: "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\\
+        Investment-platform\\Test-methods"
+      dockerfile: "Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/Test-methods.dll"
+    environment:
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "httprequest:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\ikers\\.nuget\\packages:/root/.nuget/packages"
+    - "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform\\\
+      Test-methods:/app:rw"
+    - "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform:/src:rw"
+    working_dir: "/app"

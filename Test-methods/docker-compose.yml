@@ -16,6 +16,8 @@ services:
     build:
       context: ./
     image: 'httprequest:latest'
+    env_file:
+      - .env
     container_name: 'investment-platform-container'
     ports:
       - 8080:8080
