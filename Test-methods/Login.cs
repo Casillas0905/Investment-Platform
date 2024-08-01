@@ -17,7 +17,8 @@ public class Login
             // Authenticate
             var loginData = new { login = username, password, remember_me = true };
             var loginResponse = await client.PostAsJsonAsync("https://api.cert.tastyworks.com/sessions", loginData);
-
+            Console.WriteLine($"Username: {username}");
+            Console.WriteLine($"Password: {password}");
             if (!loginResponse.IsSuccessStatusCode)
             {
                 var errorMessage = await loginResponse.Content.ReadAsStringAsync();
