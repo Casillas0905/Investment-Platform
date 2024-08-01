@@ -45,6 +45,8 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
+          echo "My username is ${{ secrets.TASTYTRADE_USERNAME }}"
+          echo "My password is ${{ secrets.TASTYTRADE_PASSWORD }}"
           docker pull ghcr.io/casillas0905/investmentplatform:latest
           docker run ghcr.io/casillas0905/investmentplatform:latest
         env:
