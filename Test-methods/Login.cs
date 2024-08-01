@@ -52,7 +52,7 @@ public class Login
         client.DefaultRequestHeaders.Add("Authorization", sessionToken);
 
         // Retrieve account details
-        var accountsResponse = await client.GetAsync("https://api.cert.tastyworks.com/customers/me/accounts/5WW13841");
+        var accountsResponse = await client.GetAsync($"https://api.cert.tastyworks.com/customers/me/accounts/{accountNumber}");
 
         if (!accountsResponse.IsSuccessStatusCode)
         {
