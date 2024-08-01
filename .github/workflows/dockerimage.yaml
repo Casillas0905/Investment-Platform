@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Test-methods/Dockerfile
+          file: ./InvestmentPlatform/Dockerfile
           push: true
           tags: ghcr.io/casillas0905/investmentplatform:latest
 

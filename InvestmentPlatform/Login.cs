@@ -11,7 +11,6 @@ public class Login
     
     public async Task<string> GetSessionToken(string username, string password)
     {
-        Console.WriteLine("get details called");
         try
         {
             // Authenticate
@@ -43,6 +42,14 @@ public class Login
             Console.WriteLine($"Error: {ex.Message}");
             return null;
         }
+    }
+
+    public Task<HttpResponseMessage> DestroySession(string sessionToken)
+    {
+        client.DefaultRequestHeaders.Clear();
+        client.DefaultRequestHeaders.Add("Authorization", sessionToken);
+        var destroyResponse = client.DeleteAsync("https://api.cert.tastyworks.com/sessions");
+        return destroyResponse;
     }
 
     public async Task<string> GetDetails(string sessionToken, string accountNumber)
