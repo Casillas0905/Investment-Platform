@@ -15,7 +15,7 @@ services:
   backend:
     build:
       context: ./
-    image: 'investmentplatform:latest'
+    image: 'ghcr.io/casillas0905/investmentplatform:latest'
     env_file:
       - .env
     container_name: 'investment-platform-container'

@@ -46,4 +46,4 @@ jobs:
       - name: Pull and run Docker image
         run: |
           docker pull ghcr.io/casillas0905/investmentplatform:latest
-          docker run -d ghcr.io/casillas0905/investmentplatform:latest
+          docker run ghcr.io/casillas0905/investmentplatform:latest
