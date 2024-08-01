@@ -47,6 +47,8 @@ jobs:
         run: |
           docker pull ghcr.io/casillas0905/investmentplatform:latest
           docker run -e TASTYTRADE_ACCOUNT_NUMBER=${{secrets.TASTYTRADE_ACCOUNT_NUMBER}} -e TASTYTRADE_USERNAME=${{ secrets.TASTYTRADE_USERNAME }} -e TASTYTRADE_PASSWORD=${{ secrets.TASTYTRADE_PASSWORD }} ghcr.io/casillas0905/investmentplatform:latest /bin/bash
+          sleep 60  
+          docker stop investmentplatform
         env:
           TASTYTRADE_USERNAME: ${{ secrets.TASTYTRADE_USERNAME }}
           TASTYTRADE_PASSWORD: ${{ secrets.TASTYTRADE_PASSWORD }}
