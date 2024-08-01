@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner | toLowerCase }}/investmentplatform:latest
+          tags: ghcr.io/casillas0905/investmentplatform:latest
 
   run:
     needs: build
@@ -44,5 +44,5 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
-          docker pull ghcr.io/${{ github.repository_owner | toLowerCase }}/investmentplatform:latest
-          docker run -d ghcr.io/${{ github.repository_owner | toLowerCase }}/investmentplatform:latest
+          docker pull ghcr.io/casillas0905/investmentplatform:latest
+          docker run -d ghcr.io/casillas0905/investmentplatform:latest
