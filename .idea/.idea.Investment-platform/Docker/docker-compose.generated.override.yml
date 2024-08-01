@@ -14,7 +14,7 @@ services:
     environment:
       DOTNET_ENVIRONMENT: "Development"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-    image: "httprequest:dev"
+    image: "ghcr.io/casillas0905/investmentplatform:dev"
     ports: []
     volumes:
     - "C:\\Users\\ikers\\.nuget\\packages:/root/.nuget/packages"

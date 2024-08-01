@@ -45,10 +45,8 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
-          echo "My username is ${{ secrets.TASTYTRADE_USERNAME }}"
-          echo "My password is ${{ secrets.TASTYTRADE_PASSWORD }}"
           docker pull ghcr.io/casillas0905/investmentplatform:latest
-          docker run -e TASTYTRADE_USERNAME=${{ secrets.TASTYTRADE_USERNAME }} -e TASTYTRADE_PASSWORD=${{ secrets.TASTYTRADE_PASSWORD }} ghcr.io/casillas0905/investmentplatform:latest /bin/bash -c "echo \$TASTYTRADE_USERNAME && echo \$TASTYTRADE_PASSWORD"
+          docker run -e TASTYTRADE_USERNAME=${{ secrets.TASTYTRADE_USERNAME }} -e TASTYTRADE_PASSWORD=${{ secrets.TASTYTRADE_PASSWORD }} ghcr.io/casillas0905/investmentplatform:latest /bin/bash
         env:
           TASTYTRADE_USERNAME: ${{ secrets.TASTYTRADE_USERNAME }}
           TASTYTRADE_PASSWORD: ${{ secrets.TASTYTRADE_PASSWORD }}
