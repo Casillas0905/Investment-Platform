@@ -15,7 +15,7 @@ services:
   backend:
     build:
       context: ./
-    image: 'httprequest:latest'
+    image: 'investmentplatform:latest'
     env_file:
       - .env
     container_name: 'investment-platform-container'
