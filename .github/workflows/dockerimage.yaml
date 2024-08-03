@@ -45,12 +45,39 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
+          # Pull the Docker image
           docker pull ghcr.io/casillas0905/investmentplatform:latest
-          docker run -e TASTYTRADE_ACCOUNT_NUMBER=${{secrets.TASTYTRADE_ACCOUNT_NUMBER}} -e TASTYTRADE_USERNAME=${{ secrets.TASTYTRADE_USERNAME }} -e TASTYTRADE_PASSWORD=${{ secrets.TASTYTRADE_PASSWORD }} ghcr.io/casillas0905/investmentplatform:latest /bin/bash
-          sleep 60  
+          
+          # Run the Docker container in detached mode
+          docker run -d --name investmentplatform \
+            -e TASTYTRADE_ACCOUNT_NUMBER=${{secrets.TASTYTRADE_ACCOUNT_NUMBER}} \
+            -e TASTYTRADE_USERNAME=${{secrets.TASTYTRADE_USERNAME}} \
+            -e TASTYTRADE_PASSWORD=${{secrets.TASTYTRADE_PASSWORD}} \
+            ghcr.io/casillas0905/investmentplatform:latest
+          
+          # Wait for the container to be healthy
+          timeout=60
+          while [ $timeout -gt 0 ]; do
+            status=$(docker inspect --format='{{json .State.Health.Status}}' investmentplatform)
+            if [ "$status" = "\"healthy\"" ]; then
+              echo "Container is healthy."
+              break
+            elif [ "$status" = "\"unhealthy\"" ]; then
+              echo "Container failed to start properly."
+              docker logs investmentplatform
+              exit 1
+            fi
+            sleep 5
+            timeout=$((timeout - 5))
+          done
+          
+          if [ $timeout -le 0 ]; then
+            echo "Container did not become healthy within the timeout period."
+            docker logs investmentplatform
+            docker stop investmentplatform
+            exit 1
+          fi
+          
+          # Optionally, you can stop the container after some operation
+          sleep 60
           docker stop investmentplatform
-        env:
-          TASTYTRADE_USERNAME: ${{ secrets.TASTYTRADE_USERNAME }}
-          TASTYTRADE_PASSWORD: ${{ secrets.TASTYTRADE_PASSWORD }}
-          TASTYTRADE_ACCOUNT_NUMBER: ${{secrets.TASTYTRADE_ACCOUNT_NUMBER}}
-     
