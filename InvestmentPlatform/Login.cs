@@ -44,12 +44,18 @@ public class Login
         }
     }
 
-    public Task<HttpResponseMessage> DestroySession(string sessionToken)
+    public string DestroySession(string sessionToken)
     {
         client.DefaultRequestHeaders.Clear();
         client.DefaultRequestHeaders.Add("Authorization", sessionToken);
+        Console.WriteLine(sessionToken);
         var destroyResponse = client.DeleteAsync("https://api.cert.tastyworks.com/sessions");
-        return destroyResponse;
+        int responseCode = (int)destroyResponse.Result.StatusCode;
+        if (responseCode == 204)
+        {
+            return "Session closed successfully";
+        }
+        return "Error closing the session";
     }
 
     public async Task<string> GetDetails(string sessionToken, string accountNumber)

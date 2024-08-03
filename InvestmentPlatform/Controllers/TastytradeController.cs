@@ -5,21 +5,21 @@ namespace InvestmentPlatform.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class TastytradeController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<TastytradeController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public TastytradeController(ILogger<TastytradeController> logger)
     {
         _logger = logger;
     }
 
-    [HttpGet(Name = "Login")]
+    [HttpGet,Route("login")]
     public async Task<string> Login()
     {
         Login login = new Login();
@@ -29,11 +29,20 @@ public class WeatherForecastController : ControllerBase
         return sessionToken;
     }
     
-    [HttpPost(Name = "DeleteSession")]
-    public async Task<Task<HttpResponseMessage>> DeleteSession([FromQuery]string sessionToken)
+    [HttpDelete,Route("delete")]
+    public async Task<string> DeleteSession([FromQuery]string sessionToken)
     {
         Login login = new Login();
-        Task<HttpResponseMessage> response = login.DestroySession(sessionToken);
+        string response = login.DestroySession(sessionToken).ToString();
         return response;
+    }
+    
+    [HttpGet,Route("getAccountDetails")]
+    public async Task<string> LoginPost([FromQuery]string sessionToken)
+    {
+        Login login = new Login();
+        string accountNumber = Environment.GetEnvironmentVariable("TASTYTRADE_ACCOUNT_NUMBER");
+        string details = await login.GetDetails(sessionToken, accountNumber);
+        return details;
     }
 }
