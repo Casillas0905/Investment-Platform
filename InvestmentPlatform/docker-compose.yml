@@ -10,12 +10,16 @@ services:
     environment:
       - POSTGRES_DB=ViaTabloid
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_PASSWORD=postgres
 
   backend:
-    build:
-      context: ./
-    image: 'investmentplatform:dev'
+    image: investmentplatform:dev
+    environment:        
+      - TASTYTRADE_USERNAME=${TASTYTRADE_USERNAME}
+      - TASTYTRADE_PASSWORD=${TASTYTRADE_PASSWORD}
+      - TASTYTRADE_ACCOUNT_NUMBER=${TASTYTRADE_ACCOUNT_NUMBER}
+      - ConnectionString__InvestmentDB = "Host=tool-postgres;Username=${User};Password:${Password};Database=tool;Port=5432"
+        
     env_file:
       - .env
     container_name: 'investment-platform-container'
@@ -23,10 +27,7 @@ services:
       - 8080:80
     depends_on:
       - db
-    environment:
-      - TASTYTRADE_USERNAME=${TASTYTRADE_USERNAME}
-      - TASTYTRADE_PASSWORD=${TASTYTRADE_PASSWORD}
-      - TASTYTRADE_ACCOUNT_NUMBER=${TASTYTRADE_ACCOUNT_NUMBER}
+      
 
 volumes:
   db:
