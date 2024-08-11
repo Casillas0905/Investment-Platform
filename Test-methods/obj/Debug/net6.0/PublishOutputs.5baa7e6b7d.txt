@@ -1,8 +1,0 @@
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Test-methods.exe
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Test-methods.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Test-methods.deps.json
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Test-methods.runtimeconfig.json
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Test-methods.pdb
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\Newtonsoft.Json.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\HttpRequest.dll
-C:\Users\ikers\OneDrive\Documents\GitHub\Investment-Platform\Investment-platform\Test-methods\bin\Debug\net6.0\publish\HttpRequest.pdb
