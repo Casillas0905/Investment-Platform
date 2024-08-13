@@ -27,9 +27,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./InvestmentPlatform/Dockerfile
+          file: ./InvestmentPlatformAPI/Dockerfile
           push: true
-          tags: ghcr.io/casillas0905/investmentplatform:latest
+          tags: ghcr.io/casillas0905/investmentplatformapi:latest
 
   run:
     needs: build
@@ -45,7 +45,7 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
-          docker pull ghcr.io/casillas0905/investmentplatform:latest
+          docker pull ghcr.io/casillas0905/investmentplatformapi:latest
           docker run -e TASTYTRADE_ACCOUNT_NUMBER=${{secrets.TASTYTRADE_ACCOUNT_NUMBER}} -e TASTYTRADE_USERNAME=${{ secrets.TASTYTRADE_USERNAME }} -e TASTYTRADE_PASSWORD=${{ secrets.TASTYTRADE_PASSWORD }} ghcr.io/casillas0905/investmentplatform:latest /bin/bash
           sleep 60  
           docker stop investmentplatform

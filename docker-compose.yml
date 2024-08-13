@@ -1,6 +1,0 @@
-﻿services:
-  investmentplatform:
-    image: investmentplatform
-    build:
-      context: .
-      dockerfile: InvestmentPlatform/Dockerfile

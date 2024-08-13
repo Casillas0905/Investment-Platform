@@ -1,34 +1,32 @@
-version: "3.8"
-services:
-  db:
-    image: "postgres:14.1-alpine"
-    container_name: "some-postgres"
-    ports:
-      - 5432:5432
-    volumes:
-      - db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=ViaTabloid
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+version: '3.8'
 
+services:
+  postgres:
+    image: postgres:latest
+    container_name: my-postgres
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: postgres
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  
   backend:
-    image: investmentplatform:dev
-    environment:        
+    build:
+      context: ./
+    image: 'investmentplatform:dev'   
+    environment:
       - TASTYTRADE_USERNAME=${TASTYTRADE_USERNAME}
       - TASTYTRADE_PASSWORD=${TASTYTRADE_PASSWORD}
       - TASTYTRADE_ACCOUNT_NUMBER=${TASTYTRADE_ACCOUNT_NUMBER}
-      - ConnectionString__InvestmentDB = "Host=tool-postgres;Username=${User};Password:${Password};Database=tool;Port=5432"
-        
     env_file:
       - .env
     container_name: 'investment-platform-container'
     ports:
       - 8080:80
-    depends_on:
-      - db
-      
 
 volumes:
-  db:
-    driver: local
+  postgres_data:

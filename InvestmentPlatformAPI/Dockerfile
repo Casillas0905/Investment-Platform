@@ -12,4 +12,4 @@ RUN dotnet publish -c Release -o out --self-contained -r linux-x64
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /App
 COPY --from=build-env /App/out . 
-ENTRYPOINT ["dotnet", "InvestmentPlatform.dll"]
+ENTRYPOINT ["dotnet", "InvestmentPlatformAPI.dll"]

@@ -7,9 +7,9 @@ public class Context : DbContext
 {
     public DbSet<User> User { get; set; }
     
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public Context(DbContextOptions<Context> options)
+        : base(options)
     {
-        optionsBuilder.UseNpgsql("Data Source = ../InvestmentPlatformAPI/Post.db");
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)

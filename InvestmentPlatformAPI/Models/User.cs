@@ -9,6 +9,9 @@ public class User
     public string TastytradeEmail { get; set; }
     public string TastytradePassword { get; set; }
     public string TastytradeAccountNumber { get; set; }
+    public string IBKREmail { get; set; }
+    public string IBKRPassword { get; set; }
+    public string IBKRAccountNumber { get; set; }
     public string AppPassword { get; set; }
     public string AppUsername { get; set; }
     public string AppEmail { get; set; }

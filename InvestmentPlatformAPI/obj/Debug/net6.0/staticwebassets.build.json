@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "/DybZ3E9ahE6iM2S2Y+3LqSzGOE8jclLr5oLkuixCnk=",
-  "Source": "InvestmentPlatform",
-  "BasePath": "_content/InvestmentPlatform",
+  "Hash": "X0oCJP3w0NVfeKnmvGNWUoK/jRQ28a7QoJgiVylbzi8=",
+  "Source": "InvestmentPlatformAPI",
+  "BasePath": "_content/InvestmentPlatformAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

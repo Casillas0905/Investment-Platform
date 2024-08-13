@@ -4,13 +4,13 @@ services:
   backend:
     build:
       context: "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\\
-        Investment-platform\\InvestmentPlatform"
+        Investment-platform\\InvestmentPlatformAPI"
       dockerfile: "Dockerfile"
       target: "build-env"
     command: []
     entrypoint:
     - "dotnet"
-    - "/app/bin/Debug/net6.0/InvestmentPlatform.dll"
+    - "/app/bin/Debug/net6.0/InvestmentPlatformAPI.dll"
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
@@ -19,6 +19,6 @@ services:
     volumes:
     - "C:\\Users\\ikers\\.nuget\\packages:/root/.nuget/packages"
     - "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform\\\
-      InvestmentPlatform:/app:rw"
+      InvestmentPlatformAPI:/app:rw"
     - "C:\\Users\\ikers\\OneDrive\\Documents\\GitHub\\Investment-Platform\\Investment-platform:/src:rw"
     working_dir: "/app"

@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices.ComTypes;
 using InvestmentPlatform.DBAcces;
+using InvestmentPlatform.DBAcces.Class;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,21 +10,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-var services = builder.Services;
-services.AddDbContext<Context>(options =>
+// Configure the DbContext
+builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("InvestmentDB"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-services.AddHostedService<WaitForDb<Context>>();
+
+// Add hosted services
+builder.Services.AddHostedService<WaitForDb<Context>>();
+builder.Services.AddScoped<IUserDbAcces, UserDbAcces>();
+// Build the application
+var app = builder.Build();
+
 // Configure the HTTP request pipeline.
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

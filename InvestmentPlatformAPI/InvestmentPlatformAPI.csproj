@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <RootNamespace>InvestmentPlatform</RootNamespace>
+        <RootNamespace>InvestmentPlatformAPI</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -23,6 +23,10 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="IBKRCalls\" />
     </ItemGroup>
 
 </Project>

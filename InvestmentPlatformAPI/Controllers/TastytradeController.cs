@@ -1,4 +1,7 @@
 using HttpRequest;
+using InvestmentPlatform.DBAcces;
+using InvestmentPlatform.DBAcces.Class;
+using InvestmentPlatform.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InvestmentPlatform.Controllers;
@@ -7,15 +10,13 @@ namespace InvestmentPlatform.Controllers;
 [Route("[controller]")]
 public class TastytradeController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+    private readonly IUserDbAcces userDbAcces;
 
     private readonly ILogger<TastytradeController> _logger;
 
-    public TastytradeController(ILogger<TastytradeController> logger)
+    public TastytradeController(IUserDbAcces userDbAcces, ILogger<TastytradeController> logger)
     {
+        this.userDbAcces = userDbAcces;
         _logger = logger;
     }
 
@@ -26,6 +27,8 @@ public class TastytradeController : ControllerBase
         string username = Environment.GetEnvironmentVariable("TASTYTRADE_USERNAME");
         string password = Environment.GetEnvironmentVariable("TASTYTRADE_PASSWORD");
         string sessionToken= await login.GetSessionToken(username,password);
+        TastytradeSessionToken tastytradeSessionToken = new TastytradeSessionToken();
+        tastytradeSessionToken.Token = sessionToken;
         return sessionToken;
     }
     
@@ -44,5 +47,13 @@ public class TastytradeController : ControllerBase
         string accountNumber = Environment.GetEnvironmentVariable("TASTYTRADE_ACCOUNT_NUMBER");
         string details = await login.GetDetails(sessionToken, accountNumber);
         return details;
+    }
+    
+    [HttpPost,Route("buyStock")]
+    public async Task<string> BuyStock(OrderModel orderModel,string sessiontoken, string accountNumber)
+    {
+        Orders orders = new Orders();
+        string response = await orders.BuyStock(orderModel, sessiontoken,  accountNumber);
+        return response;
     }
 }
